@@ -1,7 +1,12 @@
+using Shop.Interfaces;
+using Shop.Mocks;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<IAllCars, MockCars>();
+builder.Services.AddTransient<ICarsCategory, MockCategory>();
 builder.Services.AddMvc();
 
 

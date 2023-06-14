@@ -17,7 +17,7 @@ namespace Shop.Mocks
 					  shortDesc = "Szybkie auto",
 					  longDesc = "Piękny, szybki i bardzo ciche auto",
 					  img = "/img/Tesla_Model_S.jpg",
-					  price = 45000,
+					  price = 230000,
 					  isFavourite = true,
 					  avalible = true,
 					  Category = _categoryCars.AllCategories.First()
@@ -27,7 +27,7 @@ namespace Shop.Mocks
 					  shortDesc = "Ciche i spokojne",
 					  longDesc = "Wygodny samochód do życia w mieście",
 					  img = "/img/Ford_Fiesta.jpg",
-					  price = 11000,
+					  price = 52000,
 					  isFavourite = true,
 					  avalible = true,
 					  Category = _categoryCars.AllCategories.Last()
@@ -37,7 +37,7 @@ namespace Shop.Mocks
 					  shortDesc = "Zgrabny i stylowy",
 					  longDesc = "Wygodny samochód do życia w mieście",
 					  img = "/img/BMW_M3.jpg",
-					  price = 65000,
+					  price = 240000,
 					  isFavourite = true,
 					  avalible = true,
 					  Category = _categoryCars.AllCategories.Last()
@@ -47,7 +47,7 @@ namespace Shop.Mocks
 					  shortDesc = "Przytulny i duży",
 					  longDesc = "Wygodny samochód do życia w mieście",
 					  img = "/img/Mercedes_C_Class.jpg",
-					  price = 40000,
+					  price = 180000,
 					  isFavourite = false,
 					  avalible = false,
 					  Category = _categoryCars.AllCategories.Last()
@@ -57,7 +57,7 @@ namespace Shop.Mocks
 					  shortDesc = "Сichy i ekonomiczny",
 					  longDesc = "Wygodny samochód do życia w mieście",
 					  img = "/img/Nissan_Leaf.jpg",
-					  price = 14000,
+					  price = 62000,
 					  isFavourite = true,
 					  avalible = true,
 					  Category = _categoryCars.AllCategories.First()

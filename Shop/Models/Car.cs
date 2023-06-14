@@ -12,7 +12,7 @@
 
 		public string img { get; set; }
 
-		public ushort price { get; set; }
+		public int price { get; set; }
 
 		public bool isFavourite { get; set; }
 
