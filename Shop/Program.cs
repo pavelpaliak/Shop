@@ -4,6 +4,7 @@ using Shop.Mocks;
 using System;
 using Microsoft.EntityFrameworkCore;
 using Shop.Repository;
+using Shop.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +18,13 @@ builder.Services.AddTransient<ICarsCategory,CategoryRepository>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IAllCars, MockCars>();
 builder.Services.AddTransient<ICarsCategory, MockCategory>();
+
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddScoped(sp => ShopCart.GetCart(sp));
+
 builder.Services.AddMvc();
+builder.Services.AddMemoryCache();
+builder.Services.AddSession();
 
 
 var app = builder.Build();
@@ -38,6 +45,7 @@ app.UseDeveloperExceptionPage();
 app.UseHttpsRedirection();
 app.UseStatusCodePages();
 app.UseStaticFiles();
+app.UseSession();
 
 
 using (var scope = app.Services.CreateScope())
