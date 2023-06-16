@@ -16,8 +16,7 @@ builder.Services.AddDbContext<AppDBContent>(options =>
 builder.Services.AddTransient<IAllCars,CarRepository>();
 builder.Services.AddTransient<ICarsCategory,CategoryRepository>();
 builder.Services.AddControllersWithViews();
-builder.Services.AddTransient<IAllCars, MockCars>();
-builder.Services.AddTransient<ICarsCategory, MockCategory>();
+
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped(sp => ShopCart.GetCart(sp));
