@@ -60,5 +60,9 @@ app.UseRouting();
 app.MapControllerRoute(
 	name: "default",
 	pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllerRoute(
+    name: "categoryFilter",
+    pattern: "Car/{action}/{category?}",
+	defaults: new { Controller = "Car", action = "List" });
 
 app.Run();
