@@ -15,6 +15,7 @@ builder.Services.AddDbContext<AppDBContent>(options =>
 });
 builder.Services.AddTransient<IAllCars,CarRepository>();
 builder.Services.AddTransient<ICarsCategory,CategoryRepository>();
+builder.Services.AddTransient<IAllOrders, OrdersRepository>();
 builder.Services.AddControllersWithViews();
 
 
@@ -25,14 +26,9 @@ builder.Services.AddMvc();
 builder.Services.AddMemoryCache();
 builder.Services.AddSession();
 
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-
-
-
-
 if (!app.Environment.IsDevelopment())
 {
 	app.UseExceptionHandler("/Home/Error");
@@ -46,17 +42,12 @@ app.UseStatusCodePages();
 app.UseStaticFiles();
 app.UseSession();
 
-
 using (var scope = app.Services.CreateScope())
 {
 	AppDBContent content = scope.ServiceProvider.GetRequiredService<AppDBContent>();
 	DBObjects.Initial(content);
 }
-
 app.UseRouting();
-
-//app.UseAuthorization();
-
 app.MapControllerRoute(
 	name: "default",
 	pattern: "{controller=Home}/{action=Index}/{id?}");
